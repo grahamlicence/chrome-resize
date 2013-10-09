@@ -1,9 +1,13 @@
-
 (function () {
 	var el,
 		script = document.getElementsByTagName('script')[0],
-		widths = [320, 640, 960, 'maximized', 'fullscreen'],
-		closeAfter = localStorage.close ? true : false;
+		widths = [320, 640, 960, 'maximized', 'fullscreen'], //TODO configure options and save in localStorage
+		closeAfter = localStorage.close === "true" ? true : false;
+
+	if (!closeAfter) {
+		closeAfter = false;
+		localStorage.close = false;
+	}
 
 	el = document.createElement('a');
 	el.className = 'close';
@@ -45,8 +49,7 @@
 	el.checked = closeAfter;
 	el.id = 'closeafter';
 	el.addEventListener('click', function () {
-		console.log('check')
-		console.log(this.checked)
+		localStorage.close = this.checked;
 		closeAfter = this.checked;
 		return false;
 	});

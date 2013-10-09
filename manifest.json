@@ -10,8 +10,5 @@
     "default_icon": "images/default.png",
     "default_popup": "popup.html"
   },
-  "background": {
-    "scripts": ["background.js"]
-  },
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }
