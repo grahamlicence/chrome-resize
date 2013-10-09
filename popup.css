@@ -19,8 +19,11 @@ strong {
 }
 a {
 	display: block;
-	color: black;
+	color: #000;
 	text-decoration: none;
+}
+a:hover {
+	color: #0000c0;
 }
 
 label {
