@@ -29,7 +29,7 @@
 				view;
 
 			if (width) {
-				view = { width: width }
+				view = { width: width, height: 835, top: 10, left: 20 }
 			} else {
 				view = { state: this.dataset.width }
 			}
