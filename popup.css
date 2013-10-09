@@ -1,0 +1,45 @@
+
+body {
+	min-width:100px;
+	overflow-x:hidden;
+}
+
+h3 {
+	font-size: 15px;
+	margin: 0 0 3px;
+	padding: 3px 0 0;
+	border-top: solid 1px #999;
+}
+p {
+	font-size: 13px;
+	margin: 0 0 3px;
+}
+strong {
+	display: block;
+}
+a {
+	display: block;
+	color: black;
+	text-decoration: none;
+}
+
+label {
+	font-size: 0.8em;
+	line-height: 1;
+	display: inline-block;
+	margin-bottom: 0.6em;
+}
+.close { 
+	background: url(images/close.png);
+	background-size: contain;
+	float: right;
+	text-indent: -9999px;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	cursor: pointer;
+	position: absolute;
+	z-index: 10;
+	top: 5px;
+	right: 5px;
+}

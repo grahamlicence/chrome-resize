@@ -1,0 +1,17 @@
+{
+  "name": "Resize",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "description": "Simple Browser resize",
+  "icons": {
+    "16": "images/default.png"
+  },
+  "browser_action": {
+    "default_icon": "images/default.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+}
