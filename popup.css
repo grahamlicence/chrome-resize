@@ -24,6 +24,7 @@ a {
 }
 a:hover {
 	color: #0000c0;
+	background: #E8E8FF;
 }
 
 label {
@@ -33,8 +34,6 @@ label {
 	margin-bottom: 0.6em;
 }
 .close { 
-	background: url(images/close.png);
-	background-size: contain;
 	float: right;
 	text-indent: -9999px;
 	width: 20px;
@@ -45,4 +44,9 @@ label {
 	z-index: 10;
 	top: 5px;
 	right: 5px;
+}
+.close,
+.close:hover {
+	background: url(images/close.png);
+	background-size: contain;
 }
