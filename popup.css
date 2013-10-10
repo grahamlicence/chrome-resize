@@ -44,6 +44,8 @@ input[type="checkbox"] {
 textarea {
 	width: 97px;
 	height: 80px;
+	resize: vertical;
+	margin-top: 10px;
 }
 .hidden {
 	display: none;

@@ -31,6 +31,7 @@
 	settings = document.createElement('textarea');
 	settings.className = 'hidden';
 	settings.value = widths;
+	settings.title = 'Comma seperated list of sizes, can include "maximized" or "fullscreen"';
 	script.parentNode.insertBefore(settings, script);
 
 	saveEditBtn = document.createElement('a');
@@ -44,10 +45,8 @@
 			settingOpen = false;
 			settings.className = 'hidden';
 			// add new settings and replace current buttons
-			console.log(widths);
 			widths = settings.value.split(',');
 			localStorage.settings = widths;
-			console.log(widths);
 			buttons.innerHTML = '';
 			setButtons();
 		} else {
@@ -61,7 +60,6 @@
 
 	buttons = document.createElement('div');
 	script.parentNode.insertBefore(buttons, script);
-	buttons.innerHTML = "lala"
 
 	// populate buttons based on settings
 	function setButtons () {
@@ -86,8 +84,7 @@
 					window.close();
 				}
 			});
-			buttons.appendChild(el);
-			// script.parentNode.insertBefore(el, script);		
+			buttons.appendChild(el);		
 		}
 	}
 	setButtons();
@@ -99,6 +96,7 @@
 	el.type = 'checkbox';
 	el.checked = closeAfter;
 	el.id = 'closeafter';
+	el.title = 'Close this popup after resize';
 	el.addEventListener('click', function () {
 		localStorage.close = this.checked;
 		closeAfter = this.checked;
