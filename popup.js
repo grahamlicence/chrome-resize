@@ -75,9 +75,9 @@
 					view;
 
 				if (width) {
-					view = { width: width, height: 835, top: 10, left: 20 }
+					view = { width: width + 16, height: 835, top: 10, left: 20 } // 16 is the difference between the browser size and the viewport
 				} else {
-					view = { state: this.dataset.width + 16 } // 16 is the difference between the browser size and the viewport
+					view = { state: this.dataset.width } 
 				}
 				chrome.windows.update(chrome.windows.WINDOW_ID_CURRENT, view);
 				if (closeAfter) {
