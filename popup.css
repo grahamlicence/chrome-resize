@@ -1,6 +1,8 @@
 
 body {
-	min-width:100px;
+	width:110px;
+	padding-top: 5px;
+	min-height: 150px;
 	overflow-x:hidden;
 }
 
@@ -28,10 +30,23 @@ a:hover {
 }
 
 label {
+	font-family: arial;
 	font-size: 0.8em;
 	line-height: 1;
 	display: inline-block;
 	margin-bottom: 0.6em;
+	margin-top: 3px;
+	float: left;
+}
+input[type="checkbox"] {
+	float: left;
+}
+textarea {
+	width: 97px;
+	height: 80px;
+}
+.hidden {
+	display: none;
 }
 .close { 
 	float: right;
@@ -49,4 +64,11 @@ label {
 .close:hover {
 	background: url(images/close.png);
 	background-size: contain;
+}
+.save {
+	font-family: arial;
+	font-size: 0.8em;
+	width: 85%;
+	margin-bottom: 5px;
+	color: blue;
 }

@@ -1,12 +1,23 @@
 (function () {
 	var el,
 		script = document.getElementsByTagName('script')[0],
-		widths = [320, 640, 960, 'maximized', 'fullscreen'], //TODO configure options and save in localStorage
+		buttons,
+		settings,
+		settingOpen = false,
+		saveEditBtn,
+		widths,
 		closeAfter = localStorage.close === "true" ? true : false;
 
+	// load saved settings or configure new ones
 	if (!closeAfter) {
 		closeAfter = false;
 		localStorage.close = false;
+	}
+	if (!localStorage.settings) {
+		widths = [320, 640, 960, 'maximized', 'fullscreen'];
+		localStorage.widths = widths;
+	} else {
+		widths = localStorage.settings.split(',');
 	}
 
 	el = document.createElement('a');
@@ -17,29 +28,69 @@
 	});
 	script.parentNode.insertBefore(el, script);
 
-	for (var i = 0, l = widths.length; i < l; i += 1) {
-		el = document.createElement('a');
-		el.innerHTML = widths[i];
-		el.href = '#';
-		el.dataset['width'] = widths[i];
-		d = widths[i];
-		el.addEventListener('click', function (e) {
-			e.preventDefault();
-			var width = parseFloat(this.dataset.width),
-				view;
+	settings = document.createElement('textarea');
+	settings.className = 'hidden';
+	settings.value = widths;
+	script.parentNode.insertBefore(settings, script);
 
-			if (width) {
-				view = { width: width, height: 835, top: 10, left: 20 }
-			} else {
-				view = { state: this.dataset.width }
-			}
-			chrome.windows.update(chrome.windows.WINDOW_ID_CURRENT, view);
-			if (closeAfter) {
-				window.close();
-			}
-		});
-		script.parentNode.insertBefore(el, script);		
+	saveEditBtn = document.createElement('a');
+	saveEditBtn.className = 'save';
+	saveEditBtn.innerHTML = 'Change widths';
+	saveEditBtn.href = '#';
+	saveEditBtn.addEventListener('click', function (e) {
+		e.preventDefault();
+		if (settingOpen) {
+			saveEditBtn.innerHTML = 'Change widths';
+			settingOpen = false;
+			settings.className = 'hidden';
+			// add new settings and replace current buttons
+			console.log(widths);
+			widths = settings.value.split(',');
+			localStorage.settings = widths;
+			console.log(widths);
+			buttons.innerHTML = '';
+			setButtons();
+		} else {
+			saveEditBtn.innerHTML = 'Save';
+			settingOpen = true;
+			settings.className = '';
+		}
+	});
+	script.parentNode.insertBefore(saveEditBtn, script);
+
+
+	buttons = document.createElement('div');
+	script.parentNode.insertBefore(buttons, script);
+	buttons.innerHTML = "lala"
+
+	// populate buttons based on settings
+	function setButtons () {
+		for (var i = 0, l = widths.length; i < l; i += 1) {
+			el = document.createElement('a');
+			el.innerHTML = widths[i];
+			el.href = '#';
+			el.dataset['width'] = widths[i];
+			d = widths[i];
+			el.addEventListener('click', function (e) {
+				e.preventDefault();
+				var width = parseFloat(this.dataset.width),
+					view;
+
+				if (width) {
+					view = { width: width, height: 835, top: 10, left: 20 }
+				} else {
+					view = { state: this.dataset.width }
+				}
+				chrome.windows.update(chrome.windows.WINDOW_ID_CURRENT, view);
+				if (closeAfter) {
+					window.close();
+				}
+			});
+			buttons.appendChild(el);
+			// script.parentNode.insertBefore(el, script);		
+		}
 	}
+	setButtons();
 
 	el = document.createElement('hr');
 	script.parentNode.insertBefore(el, script);
