@@ -10,12 +10,11 @@
 
 	// load saved settings or configure new ones
 	if (!closeAfter) {
-		closeAfter = false;
 		localStorage.close = false;
 	}
 	if (!localStorage.settings) {
 		widths = [320, 640, 960, 'maximized', 'fullscreen'];
-		localStorage.widths = widths;
+		localStorage.settings = widths;
 	} else {
 		widths = localStorage.settings.split(',');
 	}
