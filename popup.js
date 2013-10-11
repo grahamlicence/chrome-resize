@@ -89,9 +89,6 @@
 	}
 	setButtons();
 
-	el = document.createElement('hr');
-	script.parentNode.insertBefore(el, script);
-
 	el = document.createElement('input');
 	el.type = 'checkbox';
 	el.checked = closeAfter;

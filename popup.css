@@ -5,6 +5,8 @@ body {
 	min-height: 150px;
 	overflow-x:hidden;
 	margin: 0;
+	font-family: 'Segoe UI', Tahoma, sans-serif;
+	font-size: 75%;	
 }
 
 h3 {
@@ -27,19 +29,22 @@ a {
 	padding: 1px 3px;
 }
 a:hover {
-	/*color: #0000c0;*/
-	background: #E8E8FF;
+	background: #efefef;
+}
+.buttons {
+	border-top: solid 1px #e9e9e9;
+	border-bottom: solid 1px #e9e9e9;
+	margin-bottom: 0.3em;
+	font-size: 1.1em;
 }
 .buttons a {
-	margin: 2px 0;
-	/*border-radius: 3px;*/
+	margin: 4px 0;
 }
 .buttons a:hover {
 }
 
 label {
 	font-family: arial;
-	font-size: 0.8em;
 	line-height: 1;
 	display: inline-block;
 	margin-bottom: 0.6em;
@@ -76,9 +81,6 @@ textarea {
 	background-size: contain;
 }
 .save {
-	font-family: arial;
-	font-size: 0.8em;
-	/*width: 85%;*/
 	margin-bottom: 5px;
-	/*color: blue;*/
+	font-size: 1.1em;
 }
