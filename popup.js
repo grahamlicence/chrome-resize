@@ -58,6 +58,7 @@
 
 
 	buttons = document.createElement('div');
+	buttons.className = 'buttons';
 	script.parentNode.insertBefore(buttons, script);
 
 	// populate buttons based on settings

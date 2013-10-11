@@ -1,9 +1,10 @@
 
 body {
 	width:110px;
-	padding-top: 5px;
+	padding: 20px 0 0;
 	min-height: 150px;
 	overflow-x:hidden;
+	margin: 0;
 }
 
 h3 {
@@ -23,10 +24,17 @@ a {
 	display: block;
 	color: #000;
 	text-decoration: none;
+	padding: 1px 3px;
 }
 a:hover {
-	color: #0000c0;
+	/*color: #0000c0;*/
 	background: #E8E8FF;
+}
+.buttons a {
+	margin: 2px 0;
+	/*border-radius: 3px;*/
+}
+.buttons a:hover {
 }
 
 label {
@@ -59,8 +67,8 @@ textarea {
 	cursor: pointer;
 	position: absolute;
 	z-index: 10;
-	top: 5px;
-	right: 5px;
+	top: 0;
+	right: 2px;
 }
 .close,
 .close:hover {
@@ -70,7 +78,7 @@ textarea {
 .save {
 	font-family: arial;
 	font-size: 0.8em;
-	width: 85%;
+	/*width: 85%;*/
 	margin-bottom: 5px;
-	color: blue;
+	/*color: blue;*/
 }
