@@ -72,10 +72,14 @@
 			el.addEventListener('click', function (e) {
 				e.preventDefault();
 				var width = parseFloat(this.dataset.width),
-					view;
+					view,
+					// get width if window has scrollbars
+					diff = window.innerWidth - document.getElementsByTagName('body')[0].clientWidth; 
+				//temp 
+				diff = 17;
 
 				if (width) {
-					view = { width: width + 16, height: 835, top: 10, left: 20 } // 16 is the difference between the browser size and the viewport
+					view = { width: width + 16 + diff, height: 835, top: 10, left: 20 } // 16 is the difference between the browser size and the viewport
 				} else {
 					view = { state: this.dataset.width } 
 				}
