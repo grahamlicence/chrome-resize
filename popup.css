@@ -44,12 +44,14 @@ a:hover {
 }
 
 label {
+	cursor: pointer;
 	font-family: arial;
 	line-height: 1;
 	display: inline-block;
 	margin-bottom: 0.6em;
 	margin-top: 3px;
-	float: left;
+    -webkit-user-select: none;
+    user-select: none;
 }
 input[type="checkbox"] {
 	float: left;
