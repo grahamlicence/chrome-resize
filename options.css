@@ -1,0 +1,50 @@
+* {box-sizing:border-box;margin:0;padding:0;}
+/* basic styles copied from PageSpeed Insights options page */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 32px;
+    padding: 0;
+}
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+header {
+    background-color: #F1F1F1;
+    border-bottom: 1px solid #CCC;
+    height: 71px;
+    padding-top: 26px;
+    padding-left: 42px;
+    margin-bottom: 3em;
+}
+h1 {
+    color: #53637D;
+    font-size: 26px;
+    font-weight: normal;
+    text-shadow: white 0 1px 2px;
+}
+p {
+    margin-bottom: 1em;
+}
+input, button, label {
+    padding: 0.5em 0.3em;
+}
+button {
+    cursor: pointer;
+}
+label {
+    min-width: 140px;
+    display: inline-block;
+}
+.settings {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 0.5em 0;
+}
+.settings small {
+    display: inline-block;
+}
+#options {
+    width: 400px;
+}
