@@ -11,4 +11,4 @@ This simple extension is designed for very quick flicking between set media quer
 
 Changelog
 
-0.3.0 - Added test page and changed window position/height to stay the same. Options page added for improved width settings
+0.3.0 - Changed window position left and height to stay the same when resizing. Options page added for changing width settings. 
