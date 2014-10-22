@@ -45,7 +45,7 @@ label {
 .settings small {
     display: block;
 }
-#options {
+.sizes input {
     width: 400px;
 }
 .saved {
