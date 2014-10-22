@@ -17,22 +17,23 @@
         <small>Note: there is no validation on the forms, entering incorrect values will break the extension</small>
         <p class="settings sizes"><label for="options">Resize options: </label> <input type="text" id="options" /> <button class="btnOptions">Save</button></p>
 
-        <p class="settings width-diff">
-            <small>Having dev tools docked to the right or the window maximised/fullscreen will affect the value</small>
+        <p class="settings pc width-diff">
+            <small>Having dev tools docked to the right or the window maximised/fullscreen will affect the value. On Mac this should be 0 (scrollbars take up no space).</small>
             <label for="diff">Width difference: </label> <input type="number" id="diff" /> <button class="btnDiff">Save</button>
         </p>
-
 
         <h2>Resize options</h2>
         <p>You can change the widths from the 'Change widths' button and adding the values as a comma seperated list</p>
         <p>The default is set to <code>320,640,960,maximized,fullscreen</code></p>
 
-        <h2>Width difference</h2>
-        <p>To create the extension without adding any permissions the difference between the content width and the browser actual width is set manually.</p>
+        <div class="pc">
+            <h2>Width difference</h2>
+            <p>To create the extension without adding any permissions the difference between the content width and the browser actual width is set manually.</p>
 
-        <p>The default for this is set to 16px (this figure is from Chrome on Windows 7).</p>
+            <p>The default for this is set to 16px on Windows 7 and 0 on Mac.</p>
 
-        <p>It looks like your difference is <strong class="diff">16</strong> and you can set this in settings above.</p>
+            <p>It looks like your difference is <strong class="diff"></strong> and you can update this in settings above.</p>
+        </div>
 
         <h2>Testing</h2>
         <p>You can test for difference by using the test html page in the github repo and checking the media query values match the widths calculated.</p>

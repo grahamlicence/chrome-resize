@@ -26,7 +26,7 @@ a {
 	display: block;
 	color: #000;
 	text-decoration: none;
-	padding: 1px 3px;
+	padding: 3px;
 }
 a:hover {
 	background: #efefef;
@@ -85,4 +85,5 @@ textarea {
 .save {
 	margin-bottom: 5px;
 	font-size: 1.1em;
+	outline: none;
 }

@@ -5,7 +5,9 @@
         inputDiff = document.getElementById('diff'),
         inputOptions = document.getElementById('options'),
         btnDiff = document.querySelectorAll('.btnDiff')[0],
-        btnOptions = document.querySelectorAll('.btnOptions')[0];
+        btnOptions = document.querySelectorAll('.btnOptions')[0],
+        // The scrollbar on Windows affects the width, OSX doesn't have this problem
+        isMac = (window.navigator.platform == "MacIntel") ? true : false;
 
     function savedText () {
         var saved = document.createElement('span');
@@ -14,9 +16,18 @@
         return saved;
     }
 
+    if (isMac) {
+        document.getElementsByTagName('body')[0].className = 'osx';
+    }
+
     if (!diff) {
-        localStorage.diff = 16;
-        diff = 16;
+        // no scrollbar width on Mac
+        if (isMac) {
+            diff = 0;
+        } else {
+            diff = 16;
+        }
+        localStorage.diff = diff;
     }
     output.innerText = calcDiff;
     inputDiff.value = calcDiff;
