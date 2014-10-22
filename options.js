@@ -31,7 +31,10 @@
     }
     output.innerText = calcDiff;
     inputDiff.value = calcDiff;
-    inputOptions.value = localStorage.settings.split(',');
+    if (!localStorage.settings) {
+        localStorage.settings = [320, 640, 960, 'maximized', 'fullscreen'];
+    }
+    inputOptions.value = '320,640,960,maximized,fullscreen';
     // Save width diff
     btnDiff.addEventListener('click', function (e) {
         e.preventDefault();
