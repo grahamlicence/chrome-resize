@@ -28,8 +28,13 @@
 
 	// get stored difference
 	if (!diff) {
-        localStorage.diff = 16;
-        diff = 16;
+        // no scrollbar width on Mac
+        if (window.navigator.platform == "MacIntel") {
+            diff = 0;
+        } else {
+            diff = 16;
+        }
+        localStorage.diff = diff;
     }
 
 	// add close button
